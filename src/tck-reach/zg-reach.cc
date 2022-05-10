@@ -123,7 +123,7 @@ run(std::shared_ptr<tchecker::parsing::system_declaration_t> const & sysdecl, st
   std::shared_ptr<tchecker::ta::system_t const> system{new tchecker::ta::system_t{*sysdecl}};
 
   std::shared_ptr<tchecker::zg::zg_t> zg{
-      tchecker::zg::factory(system, tchecker::zg::ELAPSED_SEMANTICS, tchecker::zg::EXTRA_LU_PLUS_LOCAL, block_size)};
+      tchecker::zg::factory(system, tchecker::zg::ELAPSED_SEMANTICS, tchecker::zg::NO_EXTRAPOLATION, block_size)};
 
   std::shared_ptr<tchecker::tck_reach::zg_reach::graph_t> graph{
       new tchecker::tck_reach::zg_reach::graph_t{zg, block_size, table_size}};

@@ -138,10 +138,11 @@ private:
 
       ++stats.visited_states();
 
-      if (ts.satisfies(node->state_ptr(), labels)) {
-        stats.reachable() = true;
-        break;
-      }
+// Always explore the entire zone graph
+//      if (ts.satisfies(node->state_ptr(), labels)) {
+//        stats.reachable() = true;
+//        break;
+//      }
 
       ts.next(node->state_ptr(), sst);
       for (auto && [status, s, t] : sst) {
